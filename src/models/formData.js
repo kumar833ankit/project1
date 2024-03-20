@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const formDataSchema = new mongoose.Schema({
   whatHappened: String,
-  emotions: String,
+  emotions: [String] ,
   isHappy: Boolean,
   isUpset: Boolean,
   isReady: Boolean,
