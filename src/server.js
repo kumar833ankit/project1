@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 app.post('/submit', (req, res) => {
   const formData = new FormData({
     whatHappened: req.body.whatHappened,
-    emotions: [req.body.emotion1, req.body.emotion2, req.body.emotion3],
+    emotions: [req.body.emotion1],
     isHappy: req.body.isHappy === 'on',
     isUpset: req.body.isUpset === 'on',
     isReady: req.body.isReady === 'on',
