@@ -12,6 +12,6 @@ const formDataSchema = new mongoose.Schema({
   howToImprove: String
 });
 
-const FormData = mongoose.model('inputdata', formDataSchema); // 'inputdata' is the collection name
+const FormData = mongoose.model('inputdatas', formDataSchema); // 'inputdata' is the collection name
 
 module.exports = FormData;
