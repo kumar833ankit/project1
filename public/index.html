@@ -257,69 +257,127 @@ p {
     
 
     <script>
+        // function submitForm() {
+        //     // Get input values
+        //     var whatHappened = document.getElementById('whatHappened').value;
+        //    var howDoYouFeel = document.getElementById('howDoYouFeel').value;
+
+        //     // var emotion2 = document.getElementById('emotion2').value;
+        //     // var emotion3 = document.getElementById('emotion3').value;
+        //     var happy = document.getElementById('happy-yes').checked;
+        //     var upset = document.getElementById('upset-yes').checked;
+        //     var ready = document.getElementById('ready-yes').checked;
+        //     var emailAndSignature = document.getElementById('emailAndSignature').value;
+        //     var howToHelp = document.getElementById('howToHelp').value;
+        //     var howToImprove = document.getElementById('howToImprove').value;
+        //     var serialNumber = document.getElementById('serialNumber').value;
+
+        //     // Prepare data object
+        //     var formData = {
+        //         whatHappened: whatHappened,
+        //         emotions: howDoYouFeel,
+        //         isHappy: happy,
+        //         isUpset: upset,
+        //         isReady: ready,
+        //         emailAndSignature: emailAndSignature,
+        //         howToHelp: howToHelp,
+        //         howToImprove: howToImprove,
+        //         serialNumber: serialNumber
+        //     };
+
+        //                 // Send data to server
+        //                 fetch('/submit', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify(formData)
+        //     })
+        //     .then(response => {
+        //         if (response.ok) {
+        //             document.getElementById('whatHappened').value = '';
+        //             document.getElementById('emotions').value = '';
+        //             // document.getElementById('emotion2').value = '';
+        //             // document.getElementById('emotion3').value = '';
+        //             document.getElementById('happy-yes').checked = false;
+        //             document.getElementById('happy-no').checked = false;
+        //             document.getElementById('upset-yes').checked = false;
+        //             document.getElementById('upset-no').checked = false;
+        //             document.getElementById('ready-yes').checked = false;
+        //             document.getElementById('ready-no').checked = false;
+        //             document.getElementById('emailAndSignature').value = '';
+        //             document.getElementById('howToHelp').value = '';
+        //             document.getElementById('howToImprove').value = '';
+        //             document.getElementById('serialNumber').value = '';
+
+        //             alert('Form submitted successfully!');
+        //         } else {
+        //             throw new Error('Failed to submit form');
+        //         }
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //         alert('Failed to submit form');
+        //     });
+        // }
         function submitForm() {
-            // Get input values
-            var whatHappened = document.getElementById('whatHappened').value;
-           var howDoYouFeel = document.getElementById('howDoYouFeel').value;
+    // Get input values
+    var whatHappened = document.getElementById('whatHappened').value;
+    var howDoYouFeel = document.getElementById('howDoYouFeel').value;
+    var happy = document.getElementById('happy-yes').checked;
+    var upset = document.getElementById('upset-yes').checked;
+    var ready = document.getElementById('ready-yes').checked;
+    var emailAndSignature = document.getElementById('emailAndSignature').value;
+    var howToHelp = document.getElementById('howToHelp').value;
+    var howToImprove = document.getElementById('howToImprove').value;
+    var serialNumber = document.getElementById('serialNumber').value;
 
-            // var emotion2 = document.getElementById('emotion2').value;
-            // var emotion3 = document.getElementById('emotion3').value;
-            var happy = document.getElementById('happy-yes').checked;
-            var upset = document.getElementById('upset-yes').checked;
-            var ready = document.getElementById('ready-yes').checked;
-            var emailAndSignature = document.getElementById('emailAndSignature').value;
-            var howToHelp = document.getElementById('howToHelp').value;
-            var howToImprove = document.getElementById('howToImprove').value;
-            var serialNumber = document.getElementById('serialNumber').value;
+    // Prepare data object
+    var formData = {
+        whatHappened: whatHappened,
+        emotions: howDoYouFeel, // Use the correct variable name
+        isHappy: happy,
+        isUpset: upset,
+        isReady: ready,
+        emailAndSignature: emailAndSignature,
+        howToHelp: howToHelp,
+        howToImprove: howToImprove,
+        serialNumber: serialNumber
+    };
 
-            // Prepare data object
-            var formData = {
-                whatHappened: whatHappened,
-                emotions: howDoYouFeel,
-                isHappy: happy,
-                isUpset: upset,
-                isReady: ready,
-                emailAndSignature: emailAndSignature,
-                howToHelp: howToHelp,
-                howToImprove: howToImprove,
-                serialNumber: serialNumber
-            };
+    // Send data to server
+    fetch('/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (response.ok) {
+            document.getElementById('whatHappened').value = '';
+            document.getElementById('howDoYouFeel').value = '';
+            document.getElementById('happy-yes').checked = false;
+            document.getElementById('happy-no').checked = false;
+            document.getElementById('upset-yes').checked = false;
+            document.getElementById('upset-no').checked = false;
+            document.getElementById('ready-yes').checked = false;
+            document.getElementById('ready-no').checked = false;
+            document.getElementById('emailAndSignature').value = '';
+            document.getElementById('howToHelp').value = '';
+            document.getElementById('howToImprove').value = '';
+            document.getElementById('serialNumber').value = '';
 
-                        // Send data to server
-                        fetch('/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => {
-                if (response.ok) {
-                    document.getElementById('whatHappened').value = '';
-                    document.getElementById('emotions').value = '';
-                    // document.getElementById('emotion2').value = '';
-                    // document.getElementById('emotion3').value = '';
-                    document.getElementById('happy-yes').checked = false;
-                    document.getElementById('happy-no').checked = false;
-                    document.getElementById('upset-yes').checked = false;
-                    document.getElementById('upset-no').checked = false;
-                    document.getElementById('ready-yes').checked = false;
-                    document.getElementById('ready-no').checked = false;
-                    document.getElementById('emailAndSignature').value = '';
-                    document.getElementById('howToHelp').value = '';
-                    document.getElementById('howToImprove').value = '';
-                    document.getElementById('serialNumber').value = '';
-
-                    alert('Form submitted successfully!');
-                } else {
-                    throw new Error('Failed to submit form');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Failed to submit form');
-            });
+            alert('Form submitted successfully!');
+        } else {
+            throw new Error('Failed to submit form');
         }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Failed to submit form');
+    });
+}
     </script>
 </body>
 </html>
