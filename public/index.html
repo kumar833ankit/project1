@@ -275,7 +275,7 @@ p {
             // Prepare data object
             var formData = {
                 whatHappened: whatHappened,
-                emotions: whatHappened1,
+                emotions: howDoYouFeel,
                 isHappy: happy,
                 isUpset: upset,
                 isReady: ready,
@@ -296,7 +296,7 @@ p {
             .then(response => {
                 if (response.ok) {
                     document.getElementById('whatHappened').value = '';
-                    document.getElementById('whatHappened1').value = '';
+                    document.getElementById('emotions').value = '';
                     // document.getElementById('emotion2').value = '';
                     // document.getElementById('emotion3').value = '';
                     document.getElementById('happy-yes').checked = false;
