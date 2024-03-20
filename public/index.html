@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post Box Project</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-section, .right-section {
+    width: 45%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+textarea, input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+label {
+    margin-right: 20px;
+}
+
+p {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.submit-btn {
+    width: 80%; 
+    padding: 8px; 
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px; 
+    text-transform: uppercase;
+    margin-top: 10px; 
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center sections vertically */
+    }
+
+    .left-section, .right-section {
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 20px; /* Add margin between sections */
+    }
+
+    label {
+        margin-right: 0; /* Reset margin for labels */
+    }
+
+    .submit-btn {
+        width: 100%; /* Full width for submit button on smaller screens */
+    }
+}
+
+        /* body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .left-section, .right-section {
+            width: 45%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        textarea, input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        label {
+            margin-right: 20px;
+        }
+        p {
+            font-size: 14px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .submit-btn {
+            width: 80%; 
+            padding: 8px; 
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px; 
+            text-transform: uppercase;
+            margin-top: 10px; 
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h1>#post #box #project</h1>
+            <span>DATE-AND-TIME: </span><input type="text" placeholder="Enter date and time" />
+            <span>@YOLO&lt;/&gt;WOLO</span>
+
+
+            <h2>WHAT REALLY HAPPENED?</h2>
+            <textarea rows="5" id="whatHappened"></textarea>
+
+            
+            <h2>HOW DO YOU FEEL NOW?</h2>
+            <textarea rows="5" id="whatHappened1"></textarea>
+            <div>
+                <span>ARE YOU HAPPY?</span>
+                <input type="checkbox" id="happy-yes" />
+                <label for="happy-yes">YES</label>
+                <input type="checkbox" id="happy-no" />
+                <label for="happy-no">NO</label>
+            </div>
+
+            <div>
+                <span>ARE YOU UPSET?</span>
+                <input type="checkbox" id="upset-yes" />
+                <label for="upset-yes">YES</label>
+                <input type="checkbox" id="upset-no" />
+                <label for="upset-no">NO</label>
+            </div>
+
+            <div>
+                <span>ARE YOU READY?</span>
+                <input type="checkbox" id="ready-yes" />
+                <label for="ready-yes">YES</label>
+                <input type="checkbox" id="ready-no" />
+                <label for="ready-no">NO</label>
+            </div>
+
+            <span>YOUR EMAIL-ID AND SIGNATURE:</span>
+            <textarea rows="3" id="emailAndSignature"></textarea>
+        </div>
+
+        <div class="right-section">
+            <h2>HOW, MAY WE HELP YOU?</h2>
+            <textarea rows="5" id="howToHelp"></textarea>
+
+            <h2>HOW WE CAN MAKE IT BETTER?</h2>
+            <textarea rows="5" id="howToImprove"></textarea>
+            
+
+
+            <div style="width: 200px; /* Adjust size as needed */
+            height: 200px; /* Adjust size as needed */
+            background-color: white; /* White background */
+            border: 2px solid black; /* Black border */
+            overflow: hidden; /* Ensure the image doesn't overflow */
+            border-radius: 10px; /* Square shape with rounded corners */
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Keep content centered */
+            margin: 0 auto; /* Center the div horizontally */
+            ">
+
+    <!-- Image -->
+    <img src="logo.jpg" alt="Logo" style="max-width: 100%; /* Ensure the image doesn't exceed the container width */
+                                           max-height: 100%; filter: invert(100%);/* Ensure the image doesn't exceed the container height */
+                                           ">
+</div>
+
+
+
+
+
+
+
+
+
+
+            <div style="text-align: center;">
+                <p>
+                    PLEASE MENTION THE 9-DIGIT <br />
+                    SERIAL NUMBER WRITTEN ON <br />
+                    THE CURRENCY NOTE OF INDIA.
+                </p>
+                <input type="text" placeholder="SERIAL NUMBER" id="serialNumber" />
+            </div>
+            <button class="submit-btn" onclick="submitForm()">Submit</button>
+        </div>
+    </div>
+
+    
+
+    <script>
+        function submitForm() {
+            // Get input values
+            var whatHappened = document.getElementById('whatHappened').value;
+            var whatHappened1 = document.getElementById('whatHappened1').value;
+            // var emotion2 = document.getElementById('emotion2').value;
+            // var emotion3 = document.getElementById('emotion3').value;
+            var happy = document.getElementById('happy-yes').checked;
+            var upset = document.getElementById('upset-yes').checked;
+            var ready = document.getElementById('ready-yes').checked;
+            var emailAndSignature = document.getElementById('emailAndSignature').value;
+            var howToHelp = document.getElementById('howToHelp').value;
+            var howToImprove = document.getElementById('howToImprove').value;
+            var serialNumber = document.getElementById('serialNumber').value;
+
+            // Prepare data object
+            var formData = {
+                whatHappened: whatHappened,
+                emotions: whatHappened1,
+                isHappy: happy,
+                isUpset: upset,
+                isReady: ready,
+                emailAndSignature: emailAndSignature,
+                howToHelp: howToHelp,
+                howToImprove: howToImprove,
+                serialNumber: serialNumber
+            };
+
+                        // Send data to server
+                        fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('whatHappened').value = '';
+                    document.getElementById('whatHappened1').value = '';
+                    // document.getElementById('emotion2').value = '';
+                    // document.getElementById('emotion3').value = '';
+                    document.getElementById('happy-yes').checked = false;
+                    document.getElementById('happy-no').checked = false;
+                    document.getElementById('upset-yes').checked = false;
+                    document.getElementById('upset-no').checked = false;
+                    document.getElementById('ready-yes').checked = false;
+                    document.getElementById('ready-no').checked = false;
+                    document.getElementById('emailAndSignature').value = '';
+                    document.getElementById('howToHelp').value = '';
+                    document.getElementById('howToImprove').value = '';
+                    document.getElementById('serialNumber').value = '';
+
+                    alert('Form submitted successfully!');
+                } else {
+                    throw new Error('Failed to submit form');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to submit form');
+            });
+        }
+    </script>
+</body>
+</html>
